@@ -13,6 +13,8 @@
 // 			     At least two vertices and one edge in input
 // 			     There are no errors in input
 
+// Complexity:   O(n^3) where n is the number of vertices
+
 // Sample Input: 
 // 6
 // 7

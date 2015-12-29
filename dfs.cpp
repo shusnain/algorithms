@@ -10,6 +10,9 @@
 // Restrictions: Vertices in input listed in ascending order
 // 			  No Error in Input
 
+// Complexity:   O(n+m) where n is the number of vertices and m
+//				 is the number of edges
+
 // Sample Input:
 // 6
 // 1 : 2 4

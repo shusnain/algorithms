@@ -12,6 +12,11 @@
 // Restrictions: Input doesn't have error
 //				 Amount must be represented as an integer (pennies)
 
+// Complexity:   
+//	   Greedy:  O(nlogn) where n is the size of the denominations
+//    Dynamic:  O(n*m) where n is the size of the denominations and
+//				m is the size of the input
+
 // Sample Input: 
 // 1453
 // g
