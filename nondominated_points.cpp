@@ -87,9 +87,19 @@ vector<Point> copyPoints(vector<Point> a, vector<Point> b, int offset, int size)
 	}
 }
 
-vector<Point> nondominatedPoints(vector<Point> S, int size){
+vector<Point> nondominatedPoints(vector<Point> S);
 
-	if(S.size() == 1){
+vector<Point> nondominatedPointsWrapper(vector<Point> S){
+	//sort the set with respect to x in increasing order
+	sort(S.begin(), S.end());
+
+	return nondominatedPoints(S);
+}
+
+vector<Point> nondominatedPoints(vector<Point> S){
+	int size = S.size();
+
+	if(size == 1){
 		vector<Point> r; 
 		r.push_back(S[0]);
 		return r;
@@ -110,8 +120,8 @@ vector<Point> nondominatedPoints(vector<Point> S, int size){
 		R.push_back(S[i+l]);
 	}
 	
-	Q = nondominatedPoints(Q, l);
-	R = nondominatedPoints(R, m);
+	Q = nondominatedPoints(Q);
+	R = nondominatedPoints(R);
 
 	//size of the vectors have possibly changed
 	l = Q.size();
@@ -149,8 +159,5 @@ int main(){
 		p.push_back(Point(x,y));
 	}
 
-	//sort the set with respect to x in increasing order
-	sort(p.begin(), p.end());
-
-	printPoints(nondominatedPoints(p, points));
+	printPoints(nondominatedPointsWrapper(p));
 }
